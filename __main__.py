@@ -95,6 +95,7 @@ for event in longpoll.listen():
                         chat_id=event.chat_id,
                         message=f'Номер группы успешно занесён в базу данных!',
                         random_id = get_random_id())
+                        print('В БД Добавлена группа')
                     else:
                         vkbot.messages.send( 
                         chat_id=event.chat_id,
@@ -118,7 +119,7 @@ for event in longpoll.listen():
                     random_id = get_random_id()
                     )
                 else:
-                    print(event.chat_id)
+                    print(f'Было запрошено расписание для группы {id}')
                     vkbot.messages.send( 
                         chat_id=event.chat_id,
                         message=MsgMaker(id),
